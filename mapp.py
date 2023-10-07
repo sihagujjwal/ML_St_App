@@ -55,7 +55,7 @@ def user_input_features():
     home_ownership = st.selectbox('Home Ownership', ['RENT', 'MORTGAGE', 'OWN'])
 
     st.subheader("Verification Status")
-    verification_status = st.selectbox('Verification Status', ['Verified', 'Source Verified', 'Not Verified')
+    verification_status = st.selectbox('Verification Status', ['Verified', 'Source Verified', 'Not Verified'])
 
     pymnt_plan = '9952'                                 
                                        
