@@ -119,8 +119,8 @@ def user_input_features():
 
     return pd.DataFrame(data, index=[0])
 
-if "user_data" not in st.session_state:
-    st.session_state.user_data = user_input_features()
+#if "user_data" not in st.session_state:
+#    st.session_state.user_data = user_input_features()
 
 if st.button("Predict"):
     user_data_encoded = pd.get_dummies(st.session_state.user_data, drop_first=True)
