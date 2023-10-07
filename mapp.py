@@ -60,7 +60,7 @@ def user_input_features():
     pymnt_plan = '9952'                                 
                                        
     st.subheader("Purpose")
-    purpose = st.selectbox('Purpose', ['debt_consolidation', 'credit_card', 'other', 'home_improvement', 'small_business', 'major_purchase', 'car', 'wedding', 'medical', 'moving', 'house', 'vacation', 'renewable_energy'                      
+    purpose = st.selectbox('Purpose', ['debt_consolidation', 'credit_card', 'other', 'home_improvement', 'small_business', 'major_purchase', 'car', 'wedding', 'medical', 'moving', 'house', 'vacation', 'renewable_energy'])                      
 
     st.subheader("Enter below values")
     loan_amnt = st.text_input("Enter loan amount in digits ")
