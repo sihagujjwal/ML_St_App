@@ -52,7 +52,7 @@ def user_input_features():
     emp_length = st.selectbox('emp length', ['10+ years', '2 years', '3 years', '< 1 year', '4 years', '5 years', '1 years', '6 years', '7 years', '8 years', '9 years'])
 
     st.subheader("Home Ownership")
-    home_ownership = st.selectbox('Home Ownership', ['RENT', 'MORTGAGE', 'OWN')
+    home_ownership = st.selectbox('Home Ownership', ['RENT', 'MORTGAGE', 'OWN'])
 
     st.subheader("Verification Status")
     verification_status = st.selectbox('Verification Status', ['Verified', 'Source Verified', 'Not Verified')
