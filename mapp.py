@@ -34,6 +34,12 @@ scaler = joblib.load('mscaler.pkl')
 encoder = joblib.load('mencoder.pkl')
 
 st.title('Lending Risk Prediction')
+html_temp = """
+<div style="background-color:tomato;padding:10px">
+<h2 style="color:white;text-align:center;">Streamlit Bank Authenticator ML App </h2>
+</div>
+"""
+st.markdown(html_temp,unsafe_allow_html=True)
 
 
 def user_input_features():
