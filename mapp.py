@@ -133,7 +133,6 @@ def main():
     result=""
     if st.button("Predict"):
         user_data_encoded = pd.get_dummies(data, drop_first=True)
-        user_data_encoded = user_data_encoded[original_columns]
         user_data_scaled = scaler.transform(user_data_encoded)
 
         prediction = model.predict(user_data_scaled)
