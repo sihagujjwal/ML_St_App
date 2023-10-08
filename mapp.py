@@ -33,14 +33,6 @@ model = tf.keras.models.load_model('lending_model.h5')
 scaler = joblib.load('mscaler.pkl')
 encoder = joblib.load('mencoder.pkl')
 
-st.title('Lending Risk Prediction')
-html_temp = """
-<div style="background-color:tomato;padding:10px">
-<h2 style="color:white;text-align:center;">Streamlit Bank Authenticator ML App </h2>
-</div>
-"""
-st.markdown(html_temp,unsafe_allow_html=True)
-
 
 def user_input_features():
     st.subheader("Loan Term")
@@ -125,16 +117,33 @@ def user_input_features():
 
     return pd.DataFrame(data, index=[0])
 
-if "user_data" not in st.session_state:
-    st.session_state.user_data = user_input_features()
+#if "user_data" not in st.session_state:
+#    st.session_state.user_data = user_input_features()
 
-if st.button("Predict"):
-    user_data_encoded = pd.get_dummies(st.session_state.user_data, drop_first=True)
-    user_data_encoded = user_data_encoded[original_columns]
-    user_data_scaled = scaler.transform(user_data_encoded)
 
-    prediction = model.predict(user_data_scaled)
-    result = encoder.inverse_transform([int(prediction[0])])
+def main():
+    st.title('Lending Risk Prediction')
+    html_temp = """
+    <div style="background-color:tomato;padding:10px">
+    <h2 style="color:white;text-align:center;">Streamlit Bank Authenticator ML App </h2>
+    </div>
+    """
+    st.markdown(html_temp,unsafe_allow_html=True)
 
-    st.write(f"The mushroom is predicted to be {result[0]}.")
+    result=""
+    if st.button("Predict"):
+        user_data_encoded = pd.get_dummies(user_input_features, drop_first=True)
+        user_data_encoded = user_data_encoded[original_columns]
+        user_data_scaled = scaler.transform(user_data_encoded)
+
+        prediction = model.predict(user_data_scaled)
+        result = encoder.inverse_transform([int(prediction[0])])
+
+        st.write(f"The mushroom is predicted to be {result[0]}.")
+    if st.button("About"):
+        st.text("Lets LEarn")
+        st.text("Built with Streamlit")
+
+if __name__=='__main__':
+    main()
 
