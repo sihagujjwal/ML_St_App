@@ -110,6 +110,7 @@ if st.button("Predict"):
     user_data_scaled = scaler.transform(user_data_encoded)
 
     prediction = model.predict(user_data_scaled)
+    print(f"{prediction}==============s")
     result = encoder.inverse_transform([int(prediction[0])])
 
     st.write(f"The mushroom is predicted to be {result[0]}.")
