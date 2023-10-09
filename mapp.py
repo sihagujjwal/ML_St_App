@@ -97,11 +97,12 @@ def user_input_features():
 
     return pd.DataFrame(data, index=[0])
 
-if "user_data" not in st.session_state:
-    st.session_state.user_data = user_input_features()
+#if "user_data" not in st.session_state:
+#    st.session_state.user_data = user_input_features()
+data = user_input_features()
 
 if st.button("Predict"):
-    user_data_encoded = pd.get_dummies(st.session_state.user_data, drop_first=True)
+    user_data_encoded = pd.get_dummies(data, drop_first=True)
     missing_cols = set(original_columns) - set(user_data_encoded.columns)
     for col in missing_cols:
         user_data_encoded[col] = 0
