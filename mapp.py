@@ -48,12 +48,13 @@ def user_input_features():
     st.subheader("Verification Status")
     verification_status = st.selectbox('Verification Status', ['Verified', 'Source Verified', 'Not Verified'])
 
-    pymnt_plan = '9952'                                 
+    st.subheader("Payment Plan")
+    pymnt_plan = st.selectbox('Payment Plan', ['y', 'n'])                                
                                        
     st.subheader("Purpose")
     purpose = st.selectbox('Purpose', ['debt_consolidation', 'credit_card', 'other', 'home_improvement', 'small_business', 'major_purchase', 'car', 'wedding', 'medical', 'moving', 'house', 'vacation', 'renewable_energy'])                      
 
-    st.subheader("Enter below values")
+    st.subheader("Enter below values in given textbox")
     loan_amnt = st.text_input("Enter loan amount in digits ")                                  
                                        
     int_rate = st.text_input("Enter interest rate in digits ")
