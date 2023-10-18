@@ -32,7 +32,7 @@ original_columns = ['loan_amnt', 'term', 'int_rate', 'installment', 'annual_inc'
 
 
 # Load the saved model and preprocessors
-model = tf.keras.models.load_model('llending_norm_model.h5')
+model = tf.keras.models.load_model('lending_norm_model.h5')
 scaler = joblib.load('scaler.pkl')
 encoder = joblib.load('encoder.pkl')
 
