@@ -27,7 +27,6 @@ original_columns = ['loan_amnt', 'term', 'int_rate', 'installment', 'annual_inc'
        'purpose_renewable_energy', 'purpose_small_business',
        'purpose_vacation', 'purpose_wedding', 'initial_list_status_w',
        'application_type_INDIVIDUAL', 'application_type_JOINT',
-       'home_ownership_MORTGAGE', 'home_ownership_NONE',
        'home_ownership_OTHER', 'home_ownership_OWN', 'home_ownership_RENT']
 
 
@@ -62,7 +61,7 @@ def user_input_features():
     application_type = st.selectbox('Application Type', ['INDIVIDUAL', 'JOINT'])
 
     st.subheader("Home Ownership")
-    home_ownership = st.selectbox('Home Ownership', ['RENT', 'MORTGAGE', 'OWN', 'NONE', 'OTHER'])
+    home_ownership = st.selectbox('Home Ownership', ['RENT', 'OWN', 'OTHER'])
 
     st.subheader("Verification Status")
     verification_status = st.selectbox('Verification Status', ['Verified', 'Source Verified'])
